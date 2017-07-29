@@ -15,6 +15,7 @@
  */
 package com.site11.jugomo.udacity.friendlychat;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -46,6 +47,9 @@ import com.site11.jugomo.udacity.friendlychat.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.app.Activity.RESULT_CANCELED;
+import static android.app.Activity.RESULT_OK;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -136,8 +140,6 @@ public class MainActivity extends AppCompatActivity {
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: Send messages on click
-
                 FriendlyMessage friendlyMessage = new
                         FriendlyMessage(mMessageEditText.getText().toString(), mUsername, null);
 
@@ -165,8 +167,7 @@ public class MainActivity extends AppCompatActivity {
                                     .createSignInIntentBuilder()
                                     .setProviders(
                                         AuthUI.EMAIL_PROVIDER,
-                                        AuthUI.GOOGLE_PROVIDER,
-                                        AuthUI.FACEBOOK_PROVIDER)
+                                        AuthUI.GOOGLE_PROVIDER)
                                     .build(),
                             RC_SIGN_IN);
                 }
