@@ -51,4 +51,10 @@ dependencies {
 
     // firebase database
     compile 'com.google.firebase:firebase-database:9.0.0'
+
+    // firebase storage
+    compile 'com.google.firebase:firebase-storage:9.0.0'
+
+    // firebase notifications
+    compile 'com.google.firebase:firebase-messaging:9.0.0'
 }
